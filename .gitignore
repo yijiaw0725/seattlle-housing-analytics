@@ -1,0 +1,21 @@
+# Raw data — too large for git, download via scripts/download_kc_assessor_data.py
+kc_assessor_data/
+
+# Python environment
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Debug / temp files
+debug_output.txt
+
+# macOS
+.DS_Store
+
+# Claude internal
+.claude/
