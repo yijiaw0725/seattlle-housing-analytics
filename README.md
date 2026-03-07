@@ -10,7 +10,8 @@ Exploratory analysis of King County residential real estate — combining public
 |----------|-------------|
 | [`kc_housing_eda.ipynb`](kc_housing_eda.ipynb) | Full EDA across all four KC Assessor datasets: price trends, structural features, parcel attributes, waterfront premiums, and feature engineering |
 | [`kc_schools_housing.ipynb`](kc_schools_housing.ipynb) | School quality analysis: OSPI pass rates, GIS spatial join (parcel → school district), and school quality premium quantification |
-| [`kc_buyer_guide.ipynb`](https://nbviewer.org/github/yijiaw0725/seattlle-housing-analytics/blob/main/kc_buyer_guide.ipynb) | Buyer-focused guide: choropleth maps, school quality vs price, value score ranking, waterfront/view premiums, and budget cheat sheet by district *(rendered via nbviewer)* |
+| [`kc_crime_housing.ipynb`](https://nbviewer.org/github/yijiaw0725/seattlle-housing-analytics/blob/main/kc_crime_housing.ipynb) | Crime & housing analysis: SPD 2015–2024 trends, neighborhood heat map, spatio-temporal crime scoring (BallTree 500m/12-month), and crime discount quantification *(rendered via nbviewer)* |
+| [`kc_buyer_guide.ipynb`](https://nbviewer.org/github/yijiaw0725/seattlle-housing-analytics/blob/main/kc_buyer_guide.ipynb) | Buyer-focused guide: choropleth maps, school quality vs price, value score ranking, waterfront/view premiums, crime & safety section, and budget cheat sheet by district *(rendered via nbviewer)* |
 
 ---
 
@@ -27,7 +28,15 @@ Exploratory analysis of King County residential real estate — combining public
 | Parcel | `EXTR_Parcel.csv` | 627K | Land characteristics, views, waterfront, zoning |
 | Lookup | `EXTR_LookUp.csv` | 1.2K | Code dictionary for all categorical fields |
 
-### 2. Education Data (committed — `education_data/`)
+### 2. Crime Data (partial — `crime_data/`)
+
+| File | Source | Description |
+|------|--------|-------------|
+| `seattle_sales_crime_score.csv` | Derived (BallTree spatial join) | PIN → crime exposure score (500m / 12-month window) |
+| `map_crime_heatmap.html` | Derived | Folium heat map of serious crime density 2020–2024 |
+| `spd_crime_2015_2024.csv` | [SPD via Socrata API](https://data.seattle.gov/Public-Safety/SPD-Crime-Data-2008-Present/tazs-3rd5) | Raw SPD incidents — gitignored (100MB), re-download via `kc_crime_housing.ipynb` |
+
+### 3. Education Data (committed — `education_data/`)
 
 | File | Source | Description |
 |------|--------|-------------|
@@ -44,7 +53,8 @@ Exploratory analysis of King County residential real estate — combining public
 seattlle-housing-analytics/
 ├── kc_housing_eda.ipynb              # KC Assessor EDA (price trends, features, premiums)
 ├── kc_schools_housing.ipynb          # School quality + housing price analysis
-├── kc_buyer_guide.ipynb              # Buyer guide: maps, value scores, budget by district
+├── kc_crime_housing.ipynb            # Crime analysis: SPD trends, heatmap, BallTree scoring
+├── kc_buyer_guide.ipynb              # Buyer guide: maps, value scores, crime & safety, budget
 ├── education_data/
 │   ├── ospi_assessment_2324_king.csv # OSPI school pass rates
 │   ├── kc_school_districts.geojson   # School district boundaries (GIS)
@@ -96,9 +106,17 @@ jupyter notebook
 - **School quality premium**: Top-quartile school district homes sell for **+98.6%** over bottom-quartile ($1.02M vs $511K median, SFR 2015–2024)
 - **GIS pipeline**: 669K parcel coordinates → point-in-polygon → 100% district assignment, 99.5% OSPI match rate
 
+### Crime & Housing ([`kc_crime_housing.ipynb`](https://nbviewer.org/github/yijiaw0725/seattlle-housing-analytics/blob/main/kc_crime_housing.ipynb))
+- **Data**: 733,596 SPD incidents 2015–2024 with valid GPS coordinates
+- **Crime trend**: Serious crime peaked 2022 (+9% vs 2015); violent crime rose +45% over the decade
+- **Spatio-temporal score**: BallTree haversine queries — serious crimes within 500m in 12 months before each sale
+- **Crime discount**: r = −0.105 (serious), r = −0.156 (violent); raw Q5 vs Q1 discount only −1.1%
+- **Key insight**: High-crime Seattle neighborhoods maintain strong prices due to urban amenity premium
+
 ### Buyer Guide ([`kc_buyer_guide.ipynb`](https://nbviewer.org/github/yijiaw0725/seattlle-housing-analytics/blob/main/kc_buyer_guide.ipynb))
 - **Interactive choropleth maps**: median price, school quality, and value score by school district
 - **Value score ranking**: school quality per dollar — identifies undervalued districts (e.g. Tukwila, Auburn)
+- **Crime & safety section**: crime exposure by district, safety quintile vs price/sqft and school quality
 - **Budget guide**: 3BR price distribution by district, colored by school quality tier
 - **Waterfront/view premiums**: body-of-water breakdown and view feature pricing
 
