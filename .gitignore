@@ -1,5 +1,6 @@
-# Raw data — too large for git, download via scripts/download_kc_assessor_data.py
+# Raw data — too large for git, download via scripts/
 kc_assessor_data/
+crime_data/spd_crime_2015_2024.csv
 
 # Python environment
 .venv/
