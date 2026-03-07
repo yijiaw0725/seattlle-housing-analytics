@@ -1,6 +1,16 @@
 # Seattle Housing Analytics
 
-Exploratory analysis of King County residential real estate — combining public assessor records, school quality data, and GIS boundaries to understand what drives housing prices.
+Exploratory analysis of King County residential real estate — combining public assessor records, school quality data, crime incidents, and GIS boundaries to understand what drives housing prices.
+
+## Highlights
+
+![Price Trend](assets/price_trend.png)
+
+![School Quality vs Price](assets/school_price_scatter.png)
+
+| School Quality Premium | Crime Safety Quintile |
+|---|---|
+| ![School Premium](assets/school_premium.png) | ![Crime Quintile](assets/crime_quintile.png) |
 
 ---
 
