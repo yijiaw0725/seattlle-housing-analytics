@@ -47,7 +47,10 @@ Four public datasets were combined for this analysis. Each is described briefly 
 
 ### 2.3 Key Findings
 
-- Median SFR price grew from ~$150K (1990) to a peak near $900K (2022), driven by two distinct run-ups: 2012–2018 and 2020–2022. A modest correction followed in 2023–2024.
+![King County Median SFR Sale Price 1990–2024](assets/price_trend.png)
+
+The chart above shows the long-run price trajectory across King County. Median SFR price grew from ~$150K (1990) to a peak near $900K (2022), with two distinct run-ups — a recovery from the 2008 financial crisis (2012–2018) and a COVID-era surge (2020–2022) — followed by a modest correction in 2023–2024.
+
 - Transaction volume peaked in 2005–2007 and again in 2020–2021; declined post-2022.
 - Living area is the strongest single predictor of price (r ≈ 0.55+). Price roughly doubles from Grade 7 (Average, ~$500K) to Grade 10 (~$1.2M+).
 - Waterfront properties carry a premium of ~150%+ over non-waterfront comparables.
@@ -81,11 +84,17 @@ Four public datasets were combined for this analysis. Each is described briefly 
 
 ### 3.3 Key Findings
 
-- Pass rates range from ~20% to ~90% across schools, with a bimodal distribution suggesting a clear split between high- and low-performing schools.
+![School Quality vs. House Price by District](assets/school_price_scatter.png)
+
+Each bubble above represents one school district. The x-axis shows the OSPI composite pass rate; the y-axis shows median SFR sale price. The strong upward trend (r = 0.77) confirms that school quality and home prices are closely linked at the district level. Mercer Island sits at the top right — the highest-scoring and most expensive district in the county.
+
+![School Quality Premium: Top vs. Bottom Quartile](assets/school_premium.png)
+
+Grouping districts into quartiles makes the premium concrete: the bottom 25% of districts by school quality has a median sale price of $511K, while the top 25% reaches $1,015K — a **+99% premium**.
+
+- Pass rates range from ~20% to ~90% across schools, with a bimodal distribution — a clear split between high- and low-performing schools.
 - Math and ELA pass rates are highly correlated (r > 0.9), supporting the composite average as a reasonable single quality signal.
 - Top districts (Mercer Island, Lake Washington, Bellevue) consistently outperform the county average across all three subjects.
-- School quality and median home prices show strong district-level correlation (r = 0.77).
-- Properties in the top school quality quartile carry a median price premium of approximately **+98.6%** over the bottom quartile.
 
 ---
 
@@ -115,8 +124,11 @@ Four public datasets were combined for this analysis. Each is described briefly 
 
 ### 4.3 Key Findings
 
+![Seattle SFR: Safety Quintile vs. Price](assets/crime_quintile.png)
+
+The two panels above tell different stories. On the left, median sale price is roughly flat across all five crime quintiles (~$785K–$860K), with no clear downward trend — suggesting crime alone does not drive raw prices down. On the right, median price per sq ft actually **increases** from the safest quintile ($429/sqft) to the highest-crime quintile ($564/sqft). This is because high-crime areas in Seattle are denser urban neighborhoods where homes are smaller but land is more expensive — the crime discount is real, but it is masked by the urban density premium when looking at total price.
+
 - Total crime volume was stable at 70–77K incidents per year from 2015–2024. Serious crime rose ~9% (2015 to 2022 peak), with violent crime up ~45% over the same period.
 - The direct correlation between nearby crime and sale price is real but modest: r = −0.105 (serious crime) and r = −0.156 (violent crime).
-- The raw price gap between the highest and lowest crime quintiles is only about −1.1%, partly because high-crime areas tend to be denser urban neighborhoods with smaller homes — making price per sq ft a more informative comparison.
-- Urban amenities (walkability, proximity to employment and services) partially offset the crime discount in Seattle's most active neighborhoods, such as Capitol Hill and First Hill.
+- Urban amenities (walkability, proximity to employment and services) partially offset the crime discount in neighborhoods such as Capitol Hill and First Hill.
 - Low-crime neighborhoods such as Magnolia and Laurelhurst correlate with higher prices, but their relative isolation is also a contributing factor.
