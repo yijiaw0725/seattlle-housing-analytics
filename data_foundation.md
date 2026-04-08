@@ -134,11 +134,9 @@ The top-performing districts (Mercer Island, Lake Washington, Bellevue, Issaquah
 
 ![Math vs. ELA Correlation and Composite Score Distribution](assets/school_correlation.png)
 
-Math and ELA pass rates are tightly correlated across schools (r = 0.90), meaning a school that performs well in one subject almost always performs well in the other. The composite score distribution (right panel) confirms a wide, relatively smooth spread across all ~400 schools — no sharp cliff, but a clear gap between the top and bottom ends.
+Math and ELA pass rates are tightly correlated across schools (r = 0.90), meaning a school that performs well in one subject almost always performs well in the other. The composite score — the simple average of all three subject pass rates — is shown in the right panel, with schools ranked from lowest to highest. The distribution is wide and smooth, with a clear gap between the top and bottom ends.
 
 **School quality and house prices**
-
-The composite score is the simple average of a school's Math, ELA, and Science pass rates — a single number summarizing overall academic performance, used here to rank and compare schools and districts.
 
 ![School Quality vs. House Price by District](assets/school_price_scatter.png)
 
