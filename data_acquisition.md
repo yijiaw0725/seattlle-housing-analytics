@@ -1,21 +1,11 @@
-# King County Housing Price Analysis
-### A Data-Driven Study of What Drives Residential Property Values in Seattle and King County
+# Data Acquisition
+### King County Housing Price Analysis
+
+This document describes how all datasets were obtained — what was collected, where it came from, how it was downloaded, and what filters were applied before analysis.
 
 ---
 
-&nbsp;
-
-## Part 1 — Data Acquisition & Methodology
-
-This part covers how all datasets were identified, retrieved, and prepared for analysis. Section 1 describes each data source and the files obtained. Section 2 documents the technical retrieval methods, explains why each approach was necessary, and shows the core code.
-
----
-
-### Section 1 — Data Sources
-
-This study draws on four distinct public data sources spanning housing transactions, building characteristics, school quality, and crime incidents. All data is publicly available at no cost. The subsections below describe each source, the files obtained, their coverage period, and how the raw data was filtered before analysis.
-
----
+## Section 1 — Data Sources
 
 ### 1.1 King County Assessor — Core Housing Data
 
@@ -192,15 +182,13 @@ With both datasets in hand, each parcel's coordinates are matched against the di
 
 ---
 
----
-
-### Section 2 — Acquisition Methodology
+## Section 2 — Acquisition Methodology
 
 This section documents the technical approach used to retrieve each dataset, explains why a particular method was necessary, and highlights the key code responsible for each step.
 
 ---
 
-#### 2.1 Method A — Form-Based Web Scraping (KC Assessor)
+### 2.1 Method A — Form-Based Web Scraping (KC Assessor)
 
 **Why this approach is required**
 
@@ -236,7 +224,7 @@ Files are then stream-downloaded in 64 KB chunks with live progress output (`dow
 
 ---
 
-#### 2.2 Method B — Paginated Socrata JSON API (Crime & School Data)
+### 2.2 Method B — Paginated Socrata JSON API (Crime & School Data)
 
 **Why this approach is preferred**
 
@@ -280,7 +268,7 @@ else:
 
 ---
 
-#### 2.3 Method C — ArcGIS REST API (King County GIS Layers)
+### 2.3 Method C — ArcGIS REST API (King County GIS Layers)
 
 **Why this approach is required**
 
@@ -304,7 +292,7 @@ The parcel centroid layer (~669,000 records) also requires pagination, fetched i
 
 ---
 
-#### 2.4 Acquisition Method Comparison
+### 2.4 Acquisition Method Comparison
 
 | Method | Data acquired | Filter at download? | Approx. download time |
 |--------|--------------|--------------------|-----------------------|
@@ -313,7 +301,3 @@ The parcel centroid layer (~669,000 records) also requires pagination, fetched i
 | Socrata JSON API (paginated) | OSPI school scores | Yes — King County, school level | < 1 min |
 | ArcGIS REST API | School district GeoJSON | No — complete layer | < 1 min |
 | ArcGIS REST API (paginated) | Parcel centroids | No — complete layer | ~7 min |
-
----
-
-*Part 2 — Exploratory Data Analysis continues on the next page.*
