@@ -23,6 +23,8 @@ Four public datasets were combined for this analysis. Each is described briefly 
 
 **Source:** `kc_housing_eda.ipynb` · KC Assessor (RPSale, ResBldg, Parcel, LookUp)
 
+**Scope:** King County, WA — all cities and unincorporated areas · 2015–2024
+
 > **SFR** (Single-Family Residence) — a standalone home on its own parcel, occupied by one household. All housing analysis in this study is restricted to SFR properties.
 
 ### 2.1 Data Preparation
@@ -92,6 +94,8 @@ Price per sq ft has risen sharply — from ~$150 in 1990 to over $450 by 2024. H
 
 **Source:** `kc_schools_housing.ipynb` · WA OSPI, KC GIS
 
+**Scope:** King County, WA — all 20 public school districts · 2023–2024 school year
+
 ### 3.1 Data Preparation
 
 | Step | What was done |
@@ -130,6 +134,8 @@ Grouping districts into quartiles makes the premium concrete: the bottom 25% of 
 ## 4. Crime EDA
 
 **Source:** `kc_crime_housing.ipynb` · SPD via Seattle Open Data Portal
+
+**Scope:** Seattle city limits only (excludes King County suburbs) · 2015–2024
 
 ### 4.1 Data Preparation
 
