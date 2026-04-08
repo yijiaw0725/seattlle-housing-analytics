@@ -116,9 +116,11 @@ Price per sq ft has risen sharply — from ~$150 in 1990 to over $450 by 2024. H
 
 ### 3.3 Key Findings
 
-**Pass rate distributions**
+> **SBAC / WCAS** — Washington State's two main standardized assessments, administered to all public school students. SBAC covers Math and ELA in grades 3–8 and 11; WCAS covers Science in grades 5, 8, and 11. Grades 9–10 are not tested under these assessments. These three subjects were chosen because they are the only ones assessed statewide with a consistent, comparable scoring standard — making them the most reliable basis for cross-school comparison.
+>
+> **ELA** (English Language Arts) covers reading comprehension and writing.
 
-Washington State tests all public school students in three subjects. **Math** and **ELA** (English Language Arts — reading and writing) are tested annually in grades 3–8 and grade 11 via the SBAC assessment. **Science** is tested at grades 5, 8, and 11 via the WCAS assessment. The pass rate for each subject is the share of a school's tested students who scored at or above the state's grade-level standard.
+**Pass rate distributions**
 
 ![Pass Rate Distributions — Math, ELA, Science](assets/school_pass_rates.png)
 
